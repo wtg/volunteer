@@ -1,7 +1,7 @@
-language: node_js
-node_js:
-  - "5.0"
-install:
-  -curl https://install.meteor.com/ | sh
-services:
-  - mongodb
+language: php
+php:
+  -- 5.4
+  -- 5.5
+  -- 5.6
+env:
+  -- DB=mysql
