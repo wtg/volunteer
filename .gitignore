@@ -14,3 +14,4 @@ vendor/composer/installed.json
 vendor/composer/autoload_namespaces.php
 vendor/autoload.php
 vendor/composer/LICENSE
+vendor/composer/autoload_real.php
