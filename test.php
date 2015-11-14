@@ -1,5 +1,5 @@
 <?php
-	require "connect.php";
+	require "resources/connect.php";
 
 	try {
 		$conn = new PDO("mysql:host=$server;", $username, $password);
