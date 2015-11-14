@@ -8,4 +8,16 @@
 	} catch(PDOException $e) {
     	echo "Connection failed: " . $e->getMessage();
     }
+
+    $init = "CREATE DATABASE IF NOT EXISTS volunteer";
+    $conn->exec($init);  
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Volunteer App</title>
+</head>
+<body>
+	<h1>Testing the application</h1>
+</body>
+</html>
