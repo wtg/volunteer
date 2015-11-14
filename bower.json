@@ -1,0 +1,19 @@
+{
+  "name": "Volunteer",
+  "homepage": "https://github.com/wtg/volunteer",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch-dist": "journal",
+    "angular": "~1.4.7"
+  }
+}
