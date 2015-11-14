@@ -9,3 +9,8 @@ vendor/klein/klein/
 
 /vendor/
 resources/composer.php
+vendor/autoload.php
+vendor/composer/installed.json
+vendor/composer/autoload_namespaces.php
+vendor/autoload.php
+vendor/composer/LICENSE
