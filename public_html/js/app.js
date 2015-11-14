@@ -12,11 +12,11 @@ app.config(['$routeProvider', function($routeProvider) {
 	// });
 	
 	$routeProvider.when('/home', {
-		templateUrl: 'partials/home.html',
+		templateUrl: 'public_html/partials/home.html',
 		controller: 'HomeController'
 	});
 	
 	$routeProvider.otherwise({
-		redirectTo: '/home'
+		redirectTo: 'public_html//home'
 	});
 }]);
