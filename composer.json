@@ -1,5 +1,12 @@
 {
+    "name": "robrusso/volunteer",
     "require": {
-        "slim/slim": "~2.0"
-    }
+        "slim/slim": "^2.6"
+    },
+    "authors": [
+        {
+            "name": "Robert Russo",
+            "email": "rrusso44@gmail.com"
+        }
+    ]
 }

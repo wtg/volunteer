@@ -6,3 +6,5 @@ connect.php
 vendor/slim/slim/
 
 vendor/klein/klein/
+
+/vendor/

@@ -11,7 +11,10 @@
 
     $app = new \Slim\Slim();
     $app->get('/', function() {
-    	echo "You're home!";
+    	include('index.html');
+    });
+     $app->get('/', function() {
+    	include('index.html');
     });
     $app->get('/hello/:name', function ($name) {
     	echo "Hello, " . $name;
