@@ -1,5 +1,33 @@
 .img-bg {
+	margin-top:-70px;
 	background-image: url('../img/bg.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	z-index: -100;
+	display: table;
+}
+.img-bg > .container {
+	/*margin-top: 50px;*/
+	background-color: rgba(0,0,0,0.6);
+	height: 500px;
+	margin: 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+}
+.img-bg > .container > .row {
+	width: 100%;
+	height: 200px;
+	margin: 0 auto;
+}
+.img-bg > .container > .row > h1 {
+	font-size: 60px;
+	color: white;
+}
+.img-bg > .container > .row > h3 {
+	font-size: 20px;
+	color: white;
 }
