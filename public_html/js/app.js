@@ -16,7 +16,7 @@ app.config(['$routeProvider', function($routeProvider) {
 		controller: 'HomeController'
 	});
 	
-	$routeProvider.when('/listing', {
+	$routeProvider.when('/listings', {
 		templateUrl: 'public_html/partials/listing.html',
 		controller: 'ListingController'
 	});
