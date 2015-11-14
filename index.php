@@ -10,14 +10,8 @@
     }
 
     $app = new \Slim\Slim();
-    $app->get('/', function() {
-    	include('index.html');
-    });
      $app->get('/', function() {
-    	include('index.html');
+    	include('public_html/index.html');
     });
-    $app->get('/hello/:name', function ($name) {
-    	echo "Hello, " . $name;
-	});
 	$app->run();
 ?>

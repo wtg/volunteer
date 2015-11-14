@@ -11,17 +11,17 @@ app.config(['$routeProvider', function($routeProvider) {
 	// 	controller: 'PhoneListCtrl'
 	// });
 	
-	$routeProvider.when('/home', {
+	$routeProvider.when('/', {
 		templateUrl: 'public_html/partials/home.html',
 		controller: 'HomeController'
 	});
 	
 	$routeProvider.when('/listing', {
-		templateUrl: 'partials/listing.html',
+		templateUrl: 'public_html/partials/listing.html',
 		controller: 'ListingController'
 	});
 	
 	$routeProvider.otherwise({
-		redirectTo: 'public_html//home'
+		redirectTo: '/'
 	});
 }]);
