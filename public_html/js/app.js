@@ -16,6 +16,11 @@ app.config(['$routeProvider', function($routeProvider) {
 		controller: 'HomeController'
 	});
 	
+	$routeProvider.when('/listing', {
+		templateUrl: 'partials/listing.html',
+		controller: 'ListingController'
+	});
+	
 	$routeProvider.otherwise({
 		redirectTo: 'public_html//home'
 	});
