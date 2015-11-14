@@ -2,3 +2,7 @@ connect.php
 .DS_Store
 .idea/
 
+
+vendor/slim/slim/
+
+vendor/klein/klein/
