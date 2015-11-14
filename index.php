@@ -1,5 +1,5 @@
 <?php
-	require "resources/connect.php";
+	require 'resources/connect.php';
 	require 'vendor/autoload.php';
 
 	try {

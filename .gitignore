@@ -8,3 +8,4 @@ vendor/slim/slim/
 vendor/klein/klein/
 
 /vendor/
+resources/composer.php
