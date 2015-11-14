@@ -2,7 +2,7 @@ var dependencies = [
 	'ngRoute'
 ];
 
-var app = angular.module("volunteerApp", []);
+var app = angular.module("volunteerApp", dependencies);
 
 app.config(['$routeProvider', function($routeProvider) {
 	// EXAMPLE:
@@ -10,6 +10,11 @@ app.config(['$routeProvider', function($routeProvider) {
 	// 	templateUrl: 'partials/phone-list.html',
 	// 	controller: 'PhoneListCtrl'
 	// });
+	
+	$routeProvider.when('/home', {
+		templateUrl: 'partials/home.html',
+		controller: 'HomeController'
+	});
 	
 	$routeProvider.otherwise({
 		redirectTo: '/home'
