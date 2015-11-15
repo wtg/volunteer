@@ -2,41 +2,65 @@
 	require 'resources/connect.php';
 	require 'vendor/autoload.php';
 
-	try {
-		$conn = new PDO("mysql:host=$server;", $username, $password);
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	} catch(PDOException $e) {
-    	echo "Connection failed: " . $e->getMessage();
-    }
-
     $app = new \Slim\Slim();
     $app->get('/', function() {
     	include('public_html/index.html');
     });
-    $app->get('/api/listings', function() {
-    	echo "OH SHIT";
-    });
-
-	/*function addListing() {
-	    $request = Slim::getInstance()->request();
-	    $wine = json_decode($request->getBody());
-	    $sql = "INSERT INTO wine (name, grapes, country, region, year, description) VALUES (:name, :grapes, :country, :region, :year, :description)";
+    
+    //Post New
+    $app->get('/api/listings', function () use ($app) {
+	    $request = $app->request();
+	    $listing = json_decode($request->getBody());
+	    class testClass {
+	    	public $id = 1;
+	    	public $title = "test";
+	    	public $description = "test listing";
+	    	public $location = "Sesame street";
+	    	public $email = "russor3@rpi.edu";
+	    }
+	    $listing = new testClass;
+	    $sql = "INSERT INTO listings (title, description, location, email) VALUES (:title, :description, :location, :email)";
 	    try {
 	        $db = getConnection();
 	        $stmt = $db->prepare($sql);
-	        $stmt->bindParam("name", $wine->name);
-	        $stmt->bindParam("grapes", $wine->grapes);
-	        $stmt->bindParam("country", $wine->country);
-	        $stmt->bindParam("region", $wine->region);
-	        $stmt->bindParam("year", $wine->year);
-	        $stmt->bindParam("description", $wine->description);
+	        $stmt->bindParam("title", $listing->title);
+	        $stmt->bindParam("description", $listing->description);
+	        $stmt->bindParam("location", $listing->location);
+	        $stmt->bindParam("email", $listing->email);
 	        $stmt->execute();
-	        $wine->id = $db->lastInsertId();
 	        $db = null;
-	        echo json_encode($wine);
+	        //echo json_encode($stmt);
 	    } catch(PDOException $e) {
-	        echo '{"error":{"text":'. $e->getMessage() .'}}';
+	        echo $e->getMessage();
 	    }
-	}*/
+	});
+
+	function getConnection() {
+    	$dbhost="127.0.0.1";
+    	$dbuser="root";
+    	$dbpass="root";
+    	$dbname="volunteerdb";
+
+    	//Create PDO
+    	$dbh = new PDO("mysql:host=$dbhost;", $dbuser, $dbpass);
+    	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    	
+    	//Createa Database
+    	$dbinit = "CREATE DATABASE IF NOT EXISTS $dbname COLLATE utf8_general_ci";
+    	$dbh->exec($dbinit);
+    	$dbh->exec("USE $dbname");
+
+    	//Create Tables
+    	$courseInit = "CREATE TABLE IF NOT EXISTS listings(" . 
+		"id INT AUTO_INCREMENT, " .
+		"title varchar(20) NOT NULL, " .
+		"description varchar(1024) NOT NULL, " . 
+		"location varchar(255) NOT NULL, " .
+		"email varchar(255) NOT NULL, " .
+		"PRIMARY KEY (id));";
+		$dbh->exec($courseInit);
+
+    	return $dbh;
+	}
 	$app->run();
 ?>
