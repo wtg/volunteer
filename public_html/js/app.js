@@ -26,7 +26,7 @@ app.config(['$routeProvider', function($routeProvider) {
 		controller: 'AddController'
 	});
 
-	$routeProvider.when('/details', {
+	$routeProvider.when('/details/:id', {
 		templateUrl: 'public_html/partials/details.html',
 		controller: 'DetailsController'
 	});
