@@ -4,10 +4,10 @@
     $app = new \Slim\Slim();
     $app->get('/', function() {
     	include('public_html/index.html');
-    });
+   	 });
 
-    //Post New
-    $app->post('/api/addListings', function () use ($app) {
+   	 //Post New
+   	 $app->post('/api/addListings', function () use ($app) {
 	    $request = $app->request();
 	    $sql = "INSERT INTO listings (title, description, location, date, email) VALUES ('" 
 	    	. $request->post('title') . "', '"
