@@ -26,6 +26,11 @@ app.config(['$routeProvider', function($routeProvider) {
 		controller: 'AddController'
 	});
 
+	$routeProvider.when('/details', {
+		templateUrl: 'public_html/partials/details.html',
+		controller: 'DetailsController'
+	});
+
 	$routeProvider.otherwise({
 		redirectTo: '/'
 	});
