@@ -3,10 +3,9 @@ app.controller('DetailsController',  ['$scope', '$routeParams', '$http', functio
 	var loadData = function() {
 		var id = $routeParams.id;
 		$http.get('api/listings/' + id).success(function(response) {
-			$scope.data = response;
-			console.log(response);
+			$scope.data = response[0];
+			console.log(response[0]);
 		}).error(function(response) {
-
 		});
 	};
 	loadData();
