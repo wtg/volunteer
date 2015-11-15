@@ -9,7 +9,12 @@
     //Post New
     $app->post('/api/addListings', function () use ($app) {
 	    $request = $app->request();
-	    $sql = "INSERT INTO listings (title, description, location, email) VALUES ('" . $request->post('title') . "', '" . $request->post('description'). "', '" . $request->post('location') . "', '" . $request->post('email') . "')";
+	    $sql = "INSERT INTO listings (title, description, location, date, email) VALUES ('" 
+	    	. $request->post('title') . "', '"
+	    	. $request->post('description'). "', '"
+	    	. $request->post('location') . "', '"
+	    	. $request->post('time') . "', '"
+	    	. $request->post('email') . "')";
 	    echo $sql;
 	    try {
 	    	$db = getConnection();
@@ -57,6 +62,7 @@
 		"title varchar(20) NOT NULL, " .
 		"description varchar(1024) NOT NULL, " . 
 		"location varchar(255) NOT NULL, " .
+		"date varchar(20) NOT NULL, " .
 		"email varchar(255) NOT NULL, " .
 		"PRIMARY KEY (id));";
 		$dbh->exec($courseInit);

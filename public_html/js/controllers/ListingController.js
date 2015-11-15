@@ -10,4 +10,13 @@ app.controller('ListingController',  ['$scope', '$http', function($scope, $http)
 		});
 	};
 	loadData();
+
+	$scope.cropDesc = function(desc) {
+		if(desc.length > 100) {
+			var cutIndex = desc.indexOf(" ", 100);
+			return desc.splice(0, cutIndex);
+		} else {
+			return desc;
+		}
+	}
 }]);
