@@ -1,5 +1,4 @@
 <?php
-	require 'resources/connect.php';
 	require 'vendor/autoload.php';
 
     $app = new \Slim\Slim();
@@ -37,9 +36,9 @@
 	});
 
 	function getConnection() {
-    	$dbhost="127.0.0.1";
+    	$dbhost="localhost";
     	$dbuser="root";
-    	$dbpass="root";
+    	$dbpass="7423098dr678592";
     	$dbname="volunteerdb";
 
     	//Create PDO
