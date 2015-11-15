@@ -14,6 +14,7 @@
 	    try {
 	    	$db = getConnection();
 	    	$db->exec($sql);
+	    	$app->redirect('/volunteer/#/listings');
 	    } catch(PDOException $e) {
 	    	echo $e->getMessage();
 	    }
