@@ -25,6 +25,14 @@
 		$db = getConnection();
 		$sql = $db->prepare("SELECT * FROM listings");
 		$sql->execute();
+		return json_encode($sql->fetchAll(PDO::FETCH_ASSOC));
+	});
+
+	$app->get('/api/listings/:id', function($id) use ($app) {
+		$request = $app->request();
+		$db = getConnection();
+		$sql = $db->prepare("SELECT * FROM listings WHERE id = " . $id);
+		$sql->execute();
 		echo json_encode($sql->fetchAll(PDO::FETCH_ASSOC));
 	});
 
