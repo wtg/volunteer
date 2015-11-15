@@ -9,4 +9,5 @@ app.controller('DetailsController',  ['$scope', '$routeParams', function($scope,
 
 		});
 	};
+	loadData();
 }]);
