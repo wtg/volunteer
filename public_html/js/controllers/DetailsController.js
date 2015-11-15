@@ -1,4 +1,4 @@
-app.controller('DetailsController',  ['$scope', '$routeParams', function($scope, $routeParams) {
+app.controller('DetailsController',  ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
 	$scope.data = {};
 	var loadData = function() {
 		var id = $routeParams.id;

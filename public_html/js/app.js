@@ -24,7 +24,7 @@ app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/add', {
 		templateUrl: 'public_html/partials/add.html',
 		controller: 'AddController'
-	});
+	});å
 
 	$routeProvider.when('/details/:id', {
 		templateUrl: 'public_html/partials/details.html',
