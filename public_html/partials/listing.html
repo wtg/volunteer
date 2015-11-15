@@ -6,7 +6,8 @@
 				<!-- <center><a name="outdoors"></a><h3>Outdoors</h3></center> -->
 				<div class="col-md-4" ng-repeat="d in data">
 					<h2 ng-bind="d.title"></h1>
-					<p ng-bind="d.description"></p>
+					<p class="small" ng-bind="d.date"></p>
+					<p ng-bind="cropDesc(d.description)"></p>
 					<p class="pull-right small">
 						<span class="pull-right">Contact: {{d.email}}</span>
 						<br/>
