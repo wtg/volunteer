@@ -59,7 +59,7 @@
     	//Create Tables
     	$courseInit = "CREATE TABLE IF NOT EXISTS listings(" . 
 		"id INT AUTO_INCREMENT, " .
-		"title varchar(20) NOT NULL, " .
+		"title varchar(100) NOT NULL, " .
 		"description varchar(1024) NOT NULL, " . 
 		"location varchar(255) NOT NULL, " .
 		"date varchar(20) NOT NULL, " .
