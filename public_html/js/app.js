@@ -21,6 +21,11 @@ app.config(['$routeProvider', function($routeProvider) {
 		controller: 'ListingController'
 	});
 	
+	$routeProvider.when('/add', {
+		templateUrl: 'partials/add.html',
+		controller: 'AddController'
+	});
+	
 	$routeProvider.otherwise({
 		redirectTo: '/'
 	});
