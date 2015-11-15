@@ -33,7 +33,7 @@
 		$db = getConnection();
 		$sql = $db->prepare("SELECT * FROM listings WHERE id = " . $id);
 		$sql->execute();
-		return json_encode($sql->fetchAll(PDO::FETCH_ASSOC));
+		echo json_encode($sql->fetchAll(PDO::FETCH_ASSOC));
 	});
 
 	function getConnection() {
