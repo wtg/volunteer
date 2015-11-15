@@ -4,7 +4,7 @@
 			<div class="col-xs-12">
 				<h1>Opportunities <a type="button" class="btn btn-default pull-right" href="#/add">Add New</a></h2>
 				<!-- <center><a name="outdoors"></a><h3>Outdoors</h3></center> -->
-				<div class="col-md-4" ng-repeat="d in data">
+				<div class="col-md-4" ng-repeat="d in data | orderBy:'date'">
 					<h2 ng-bind="d.title"></h1>
 					<p class="small" ng-bind="d.date | date:'MMM d, y h:mm a'"></p>
 					<p ng-bind="cropDesc(d.description)" style="height:80px"></p>
