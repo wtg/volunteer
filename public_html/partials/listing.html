@@ -5,12 +5,16 @@
 				<h1>Opportunities <a type="button" class="btn btn-default pull-right" href="#/add">Add New</a></h2>
 				<!-- <center><a name="outdoors"></a><h3>Outdoors</h3></center> -->
 				<div class="col-md-4">
-					<h2>Hello World</h1>
-					<p>We will have a small subset of the total information here. Click below for more.</p>
-					<p class="pull-right small">November 22, 2015, 12-3pm<br/><span class="pull-right">20 volunteers needed</span></p>
+					<h2 ng-repeat-start="d in data" ng-bind="d.title"></h1>
+					<p ng-bind="d.description"></p>
+					<p class="pull-right small">
+						<span class="pull-right">Contact: {{d.email}}</span>
+						<br/>
+						<span class="pull-right">20 volunteers needed</span>
+					</p>
 					<a type="button" class="btn btn-info btn-sm" href="#/details">Learn More</a>
 					<a type="button" class="btn btn-success btn-sm" href="#/signup">Sign Up</a>
-					<hr>
+					<hr ng-repeat-end>
 					<h2>Hello World</h1>
 					<p>We will have a small subset of the total information here. Click below for more.</p>
 					<p class="pull-right small">November 22, 2015, 12-3pm<br/><span class="pull-right">20 volunteers needed</span></p>
