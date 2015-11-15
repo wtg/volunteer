@@ -10,22 +10,22 @@ app.config(['$routeProvider', function($routeProvider) {
 	// 	templateUrl: 'partials/phone-list.html',
 	// 	controller: 'PhoneListCtrl'
 	// });
-	
+
 	$routeProvider.when('/', {
 		templateUrl: 'public_html/partials/home.html',
 		controller: 'HomeController'
 	});
-	
+
 	$routeProvider.when('/listings', {
 		templateUrl: 'public_html/partials/listing.html',
 		controller: 'ListingController'
 	});
-	
+
 	$routeProvider.when('/add', {
-		templateUrl: 'partials/add.html',
+		templateUrl: 'public_html/partials/add.html',
 		controller: 'AddController'
 	});
-	
+
 	$routeProvider.otherwise({
 		redirectTo: '/'
 	});
