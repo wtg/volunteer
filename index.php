@@ -8,7 +8,7 @@
     });
 
     //Post New
-    $app->post('/api/listings', function () use ($app) {
+    $app->post('/api/addListings', function () use ($app) {
 	    $request = $app->request();
 	    $sql = "INSERT INTO listings (title, description, location, email) VALUES ('" . $request->post('title') . "', '" . $request->post('description'). "', '" . $request->post('location') . "', '" . $request->post('email') . "')";
 	    echo $sql;
@@ -18,20 +18,14 @@
 	    } catch(PDOException $e) {
 	    	echo $e->getMessage();
 	    }
-	    /*$sql = "INSERT INTO listings (title, description, location, email) VALUES (:title, :description, :location, :email)";
-	    try {
-	        $db = getConnection();
-	        $stmt = $db->prepare($sql);
-	        $stmt->bindParam("title", listing->title);
-	        $stmt->bindParam("description", $request->post('title'));
-	        $stmt->bindParam("location", $request->post('title'));
-	        $stmt->bindParam("email", $request->post('title'));
-	        $stmt->execute();
-	        $db = null;
-	        //echo json_encode($stmt);
-	    } catch(PDOException $e) {
-	        echo $e->getMessage();
-	    }*/
+	});
+
+	$app->get('/api/listings/', function () use ($app) {
+		$request = $app->request();
+		$db = getConnection();
+		$sql = $db->prepare("SELECT * FROM listings");
+		$sql->execute();
+		echo json_encode($sql->fetchAll(PDO::FETCH_ASSOC));
 	});
 
 	function getConnection() {
