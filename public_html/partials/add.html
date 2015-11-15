@@ -3,25 +3,27 @@
 		<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0">
 			<div class="well well-lg">
 				<h2 style="margin-top:0">Add a new opportunity</h2>
-				<div class="form-group">
-					<label for="newTitle">Enter a short headline for the opportunity:</label>
-					<input class="form-control" id="newTitle" placeholder="Title">
-				</div>
-				<div class="form-group">
-					<label for="newDesc">Enter a full description for the opportunity:</label>
-					<textarea class="form-control" id="newDesc" placeholder="Description"></textarea>
-				</div>
-				<div class="form-group">
-					<label for="newDesc">Enter the location for the opportunity:</label>
-					<input class="form-control" id="newLoc" placeholder="Location"></textarea>
-				</div>
-				<div class="form-group">
-					<label for="newDesc">Enter the organizer's contact email for the opportunity:</label>
-					<input class="form-control" id="newEmail" placeholder="Email"></textarea>
-				</div>
-				<div class="form-group">
-					<button type="button" class="btn btn-success" href="#/">Submit </button>
-				</div>
+				<form action="api/listings" method="post">
+					<div class="form-group">
+						<label for="newTitle">Enter a short headline for the opportunity:</label>
+						<input class="form-control" name="title" id="newTitle" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label for="newDesc">Enter a full description for the opportunity:</label>
+						<textarea class="form-control" name="description" id="newDesc" placeholder="Description"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="newDesc">Enter the location for the opportunity:</label>
+						<input class="form-control" name="location" id="newLoc" placeholder="Location"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="newDesc">Enter the organizer's contact email for the opportunity:</label>
+						<input class="form-control" name="email" id="newEmail" placeholder="Email"></textarea>
+					</div>
+					<div class="form-group">
+						<a href="/"><button type="submit" class="btn btn-success">Submit</button></a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

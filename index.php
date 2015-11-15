@@ -6,33 +6,32 @@
     $app->get('/', function() {
     	include('public_html/index.html');
     });
-    
+
     //Post New
-    $app->get('/api/listings', function () use ($app) {
+    $app->post('/api/listings', function () use ($app) {
 	    $request = $app->request();
-	    $listing = json_decode($request->getBody());
-	    class testClass {
-	    	public $id = 1;
-	    	public $title = "test";
-	    	public $description = "test listing";
-	    	public $location = "Sesame street";
-	    	public $email = "russor3@rpi.edu";
+	    $sql = "INSERT INTO listings (title, description, location, email) VALUES ('" . $request->post('title') . "', '" . $request->post('description'). "', '" . $request->post('location') . "', '" . $request->post('email') . "')";
+	    echo $sql;
+	    try {
+	    	$db = getConnection();
+	    	$db->exec($sql);
+	    } catch(PDOException $e) {
+	    	echo $e->getMessage();
 	    }
-	    $listing = new testClass;
-	    $sql = "INSERT INTO listings (title, description, location, email) VALUES (:title, :description, :location, :email)";
+	    /*$sql = "INSERT INTO listings (title, description, location, email) VALUES (:title, :description, :location, :email)";
 	    try {
 	        $db = getConnection();
 	        $stmt = $db->prepare($sql);
-	        $stmt->bindParam("title", $listing->title);
-	        $stmt->bindParam("description", $listing->description);
-	        $stmt->bindParam("location", $listing->location);
-	        $stmt->bindParam("email", $listing->email);
+	        $stmt->bindParam("title", listing->title);
+	        $stmt->bindParam("description", $request->post('title'));
+	        $stmt->bindParam("location", $request->post('title'));
+	        $stmt->bindParam("email", $request->post('title'));
 	        $stmt->execute();
 	        $db = null;
 	        //echo json_encode($stmt);
 	    } catch(PDOException $e) {
 	        echo $e->getMessage();
-	    }
+	    }*/
 	});
 
 	function getConnection() {
