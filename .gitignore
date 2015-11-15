@@ -16,3 +16,8 @@ vendor/autoload.php
 vendor/composer/LICENSE
 vendor/composer/autoload_real.php
 vendor/autoload.php
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
