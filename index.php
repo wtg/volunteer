@@ -43,8 +43,8 @@
 
 	function getConnection() {
     	$dbhost="localhost";
-    	$dbuser="root";
-    	$dbpass="7423098dr678592";
+    	$dbuser="rpivolunteer";
+    	$dbpass="";
     	$dbname="volunteerdb";
 
     	//Create PDO
